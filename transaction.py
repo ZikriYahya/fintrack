@@ -30,6 +30,17 @@ def input_nominal():
             print("Nominal harus berupa angka.")
 
 
+def input_text(prompt):
+    while True:
+        text = input(prompt).strip()
+
+        if text == "":
+            print("Input tidak boleh kosong.")
+            continue
+
+        return text
+
+
 def input_date():
     while True:
         tanggal = input("Tanggal (YYYY-MM-DD): ")
@@ -64,8 +75,8 @@ def add_transaction(transactions, jenis):
     tanggal = input_date()
     nominal = input_nominal()
 
-    kategori = input("Kategori: ")
-    keterangan = input("Keterangan: ")
+    kategori = input_text("Kategori: ")
+    keterangan = input_text("Keterangan: ")
 
     transaksi = {
         "id": generate_id(transactions),

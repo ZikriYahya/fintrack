@@ -14,5 +14,13 @@
         "nominal": 10000,
         "kategori": "kopi",
         "keterangan": "kopi sore"
+    },
+    {
+        "id": 3,
+        "jenis": "pemasukan",
+        "tanggal": "2026-12-12",
+        "nominal": 10000,
+        "kategori": "donate",
+        "keterangan": "yayaya"
     }
 ]
