@@ -22,5 +22,21 @@
         "nominal": 10000,
         "kategori": "donate",
         "keterangan": "yayaya"
+    },
+    {
+        "id": 4,
+        "jenis": "pemasukan",
+        "tanggal": "2026-11-14",
+        "nominal": 20000,
+        "kategori": "freelance",
+        "keterangan": "editor"
+    },
+    {
+        "id": 5,
+        "jenis": "pengeluaran",
+        "tanggal": "2026-09-01",
+        "nominal": 14000,
+        "kategori": "kopi",
+        "keterangan": "kopi malam"
     }
 ]

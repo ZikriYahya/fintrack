@@ -53,6 +53,16 @@ def input_date():
             print("Format tanggal salah. Contoh: 2026-09-21")
 
 
+def validate_transaction_type(jenis):
+    jenis_valid = ["pemasukan", "pengeluaran"]
+
+    if jenis not in jenis_valid:
+        print("Jenis transaksi tidak valid.")
+        return False
+
+    return True
+
+
 def show_transactions(transactions):
     print("\n===== DAFTAR TRANSAKSI =====")
 
@@ -70,6 +80,10 @@ def show_transactions(transactions):
 
 
 def add_transaction(transactions, jenis):
+
+    if not validate_transaction_type(jenis):
+        return
+
     print(f"\n===== TAMBAH {jenis.upper()} =====")
 
     tanggal = input_date()
