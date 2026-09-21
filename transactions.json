@@ -1,0 +1,26 @@
+[
+    {
+        "id": 2,
+        "jenis": "pengeluaran",
+        "tanggal": "2026-11-12",
+        "nominal": 10000,
+        "kategori": "makan",
+        "keterangan": "siang"
+    },
+    {
+        "id": 3,
+        "jenis": "pengeluaran",
+        "tanggal": "2026-11-13",
+        "nominal": 20000,
+        "kategori": "kopi",
+        "keterangan": "kopi"
+    },
+    {
+        "id": 4,
+        "jenis": "pemasukan",
+        "tanggal": "2026-12-12",
+        "nominal": 200000,
+        "kategori": "gaji",
+        "keterangan": "des"
+    }
+]
