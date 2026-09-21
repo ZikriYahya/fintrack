@@ -2,6 +2,7 @@ from storage import load_transactions
 from transaction import (
     add_transaction,
     delete_transaction,
+    edit_transaction,
     expense_report,
     filter_transactions,
     show_balance,
@@ -23,10 +24,11 @@ while True:
     print("2. Tambah pengeluaran")
     print("3. Lihat transaksi")
     print("4. Lihat saldo")
-    print("5. Hapus transaksi")
-    print("6. Laporan pengeluaran")
-    print("7. Filter transaksi")
-    print("8. Keluar")
+    print("5. Edit transaksi")
+    print("6. Hapus transaksi")
+    print("7. Laporan pengeluaran")
+    print("8. Filter transaksi")
+    print("9. Keluar")
 
     pilihan = input("\nPilih menu: ")
 
@@ -43,15 +45,18 @@ while True:
         show_balance(transactions)
 
     elif pilihan == "5":
-        delete_transaction(transactions)
+        edit_transaction(transactions)
 
     elif pilihan == "6":
-        expense_report(transactions)
+        delete_transaction(transactions)
 
     elif pilihan == "7":
-        filter_transactions(transactions)
+        expense_report(transactions)
 
     elif pilihan == "8":
+        filter_transactions(transactions)
+
+    elif pilihan == "9":
         print("\nData tersimpan.")
         print("Terima kasih sudah menggunakan FinTrack!")
         break

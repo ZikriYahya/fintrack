@@ -108,6 +108,84 @@ def add_transaction(transactions, jenis):
     print(f"ID transaksi: {transaksi['id']}")
 
 
+def edit_transaction(transactions):
+    show_transactions(transactions)
+
+    if len(transactions) == 0:
+        return
+
+    try:
+        id_transaksi = int(
+            input("\nMasukkan ID transaksi yang ingin diedit: ")
+        )
+
+        transaksi_ditemukan = None
+
+        for transaksi in transactions:
+            if transaksi["id"] == id_transaksi:
+                transaksi_ditemukan = transaksi
+                break
+
+        if transaksi_ditemukan is None:
+            print("ID transaksi tidak ditemukan.")
+            return
+
+        print("\n===== EDIT TRANSAKSI =====")
+        print("Kosongkan input jika ingin mempertahankan data lama.")
+
+        tanggal = input(
+            f"Tanggal [{transaksi_ditemukan['tanggal']}]: "
+        ).strip()
+
+        if tanggal != "":
+            try:
+                datetime.strptime(tanggal, "%Y-%m-%d")
+                transaksi_ditemukan["tanggal"] = tanggal
+
+            except ValueError:
+                print("Format tanggal salah.")
+                return
+
+        nominal = input(
+            f"Nominal [Rp{transaksi_ditemukan['nominal']}]: "
+        ).strip()
+
+        if nominal != "":
+            try:
+                nominal = int(nominal)
+
+                if nominal <= 0:
+                    print("Nominal harus lebih dari 0.")
+                    return
+
+                transaksi_ditemukan["nominal"] = nominal
+
+            except ValueError:
+                print("Nominal harus berupa angka.")
+                return
+
+        kategori = input(
+            f"Kategori [{transaksi_ditemukan['kategori']}]: "
+        ).strip()
+
+        if kategori != "":
+            transaksi_ditemukan["kategori"] = kategori
+
+        keterangan = input(
+            f"Keterangan [{transaksi_ditemukan['keterangan']}]: "
+        ).strip()
+
+        if keterangan != "":
+            transaksi_ditemukan["keterangan"] = keterangan
+
+        save_transactions(transactions)
+
+        print("\nTransaksi berhasil diperbarui.")
+
+    except ValueError:
+        print("ID harus berupa angka.")
+
+
 def delete_transaction(transactions):
     show_transactions(transactions)
 
